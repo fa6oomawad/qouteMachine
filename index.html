@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<style type="text/css">
+#pagee{
+    background-image: url("img/1.jpeg");
+  background-size: 100%;
+   
+    min-height: 100vh;
+
+}
+#quote-box{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+   height: 300px;
+  width: 600px;
+  background-color: aliceblue;
+  
+  border-radius: 10px;
+}
+
+#text{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:20px;
+  font-weight: bolder;
+   text-align: center;
+   padding-top: 90px ;
+   padding-bottom: 30px;
+  
+
+}
+
+
+#author {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bold;
+color: blue;
+    text-align: right;
+    padding-right:30px;
+    
+}
+#tweet-quote{
+margin-left: 40px;   
+background-color:black;
+color:white;
+}
+#button2 
+{background-color: black;
+    color:white;
+}
+#new-quote{
+    margin-left:150px;
+    background-color:black;
+    color:white;
+}
+</style>
+
+
+
+</head>
+
+<body>
+
+<div class="container-fluid" id="pagee">
+
+
+<div id="quote-box" >
+    <div id="text"> <i class="fas fa-quote-left"  id="qicon"></i> <p id="qoute">Nothing is impossible, the word itself says, "I'm possible!" </p>
+    </div>
+    <p id="author"> -Audrey Hepburn </p>
+    <div class="row">
+        <div class="col-md-6">
+                <a id="tweet" class="twitter-share-button"
+                href="https://twitter.com/intent/tweet?text=">
+                <button  class="btn btn-default" id="tweet-quote"><i class="fab fa-twitter"></i></button></a>
+               
+                <button class="btn btn-default" id="button2"><i class="fab fa-facebook-f"></i></button>
+
+        </div>
+        <div class="col-md-6">
+              
+                <button onclick="change()" class="btn btn-default" id="new-quote">new qoute</button>
+<p id="demo"></p>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+function change (){
+  var author=document.getElementById("author");
+  var text=document.getElementById("qoute");
+  var background=document.getElementById("pagee");
+  var button1=document.getElementById("tweet-quote");
+  var button2=document.getElementById("button2");
+  var button3=document.getElementById("new-quote");
+  var icon=document.getElementById("qicon");
+  var tweet = document.getElementById("tweet");
+ //array of qoutes
+  let b=["If you can dream it, you can do it.","If you fell down yesterday, stand up today.","There is only one thing that makes a dream impossible to achieve: the fear of failure.","Most of the important things in the world have been accomplished by people who have kept on trying when there seemed to be no hope at all."];
+  //array of qoute's author 
+  let c=["Walt Disney","H. G. Wells","Paulo Coelho","Dale Carnegie"];
+  let imgs= ["url('img/1.jpeg')","url('img/2.jpg')","url('img/3.jpg')","url('img/4.jpg')"];
+  // array of colors
+  let colors=["rgb(30, 159, 210)","rgb(145, 39, 155)","rgb(223, 160, 67)","rgb(24, 20, 15);"]
+  let s=Math.floor(Math.random()*4);
+  author.innerHTML=c[s];
+    text.innerHTML=b[s];
+    background.style.backgroundImage=imgs[s];
+    author.style.color=colors[s];
+    text.style.color=colors[s];
+  icon.style.color=colors[s];
+  tweet.href="https://twitter.com/intent/tweet?text="+ b[s] + " by " + c[s];
+
+  button1.style.backgroundColor =colors[s];
+  button2.style.backgroundColor =colors[s];
+  button3.style.backgroundColor =colors[s];
+
+
+
+}
+
+
+</script>
+
+</body>
+</html>
